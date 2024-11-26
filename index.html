@@ -3,26 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Target Enterprises</title>
+    <title>Online Store Prototype</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Target Enterprises</h1>
+        <h1>Online Store Prototype</h1>
         <nav>
-            <a href="#products">Catalog</a> |
+            <a href="#login">Login</a> |
+            <a href="#catalog">Catalog</a> |
             <a href="#cart">Shopping Cart</a> |
-            <a href="#client-form">Create Account Form</a> |
+            <a href="#client-form">New Client Form</a> |
             <a href="#history">Shopping History</a>
         </nav>
     </header>
     <main>
-        <!-- Products Section -->
-        <section id="Catalog">
-            <h2>Products</h2>
-            <div class="Catalog">
-                <h3>Item 1</h3>
-                <p></p>
+        <!-- Login Section -->
+        <section id="login">
+            <h2>Login</h2>
+            <form onsubmit="login(); return false;">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <button type="submit">Login</button>
+                    <button type="button" onclick="createAccount()">Create Account</button>
+                    <button type="button" onclick="continueAsGuest()">Continue as Guest</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Catalog Section -->
+        <section id="catalog">
+            <h2>Catalog</h2>
+            <div class="product">
+                <h3>Product 1</h3>
+                <p>Description of Product 1</p>
                 <p>Price: $10</p>
                 <form class="add-to-cart" onsubmit="addToCart('Product 1', 10); return false;">
                     <label for="quantity1">Quantity:</label>
@@ -31,8 +52,8 @@
                 </form>
             </div>
             <div class="product">
-                <h3>Item 2</h3>
-                <p></p>
+                <h3>Product 2</h3>
+                <p>Description of Product 2</p>
                 <p>Price: $20</p>
                 <form class="add-to-cart" onsubmit="addToCart('Product 2', 20); return false;">
                     <label for="quantity2">Quantity:</label>
@@ -54,7 +75,7 @@
 
         <!-- New Client Form Section -->
         <section id="client-form">
-            <h2>New Client Form</h2>
+            <h2>Create Account</h2>
             <form onsubmit="submitClientInfo(); return false;">
                 <div>
                     <label for="firstName">First Name:</label>
