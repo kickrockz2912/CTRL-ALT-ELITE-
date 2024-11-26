@@ -3,6 +3,22 @@
 let cart = [];
 let shoppingHistory = JSON.parse(localStorage.getItem('shoppingHistory')) || [];
 
+function login() {
+    // Implement login logic here
+    alert('Logged in successfully!');
+}
+
+function createAccount() {
+    // Display the create account form
+    document.getElementById('client-form').scrollIntoView();
+}
+
+function continueAsGuest() {
+    // Allow user to continue as guest
+    alert('Continuing as guest...');
+    document.getElementById('catalog').scrollIntoView();
+}
+
 function addToCart(product, price) {
     const quantity = document.querySelector(`#quantity${product === 'Product 1' ? '1' : '2'}`).value;
     const item = {
